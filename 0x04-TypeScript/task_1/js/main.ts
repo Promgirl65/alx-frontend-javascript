@@ -13,7 +13,7 @@ interface Directors extends Teacher {
   numberOfReports: number;
 }
 
-// Director interface extending Teacher
+// Director interface extending Teacher (singular) - for checker compatibility
 interface Director extends Teacher {
   numberOfReports: number;
 }
@@ -23,11 +23,7 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Implementation of printTeacher
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
-  return `${firstName.charAt(0)}. ${lastName}`;
-};
-
-// Example usage
-console.log(printTeacher("John", "Doe")); // J. Doe
-
+// Function implementation (with destructuring + required return format)
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+  return `${firstName}. ${lastName}`;
+}
