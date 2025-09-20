@@ -10,7 +10,7 @@ interface Teacher {
 
 // Directors interface extending Teacher
 interface Directors extends Teacher {
-  numberOfReports: number;
+  numberOfReports: number; // new required property
 }
 
 // Example usage: Teacher
