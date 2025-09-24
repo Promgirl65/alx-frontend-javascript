@@ -40,17 +40,13 @@ class Teacher implements TeacherInterface {
 
 // Function to create an employee (Director or Teacher)
 function createEmployee(salary: number | string): Director | Teacher {
-  const EmployeeClass = 
-    typeof salary === "number" && salary < 500
-      ? Teacher
-      : Director;
-
-  // instantiate dynamically, no "return new Teacher()" or "return new Director()"
-  return new EmployeeClass();
+  if (typeof salary === "number" && salary < 500) {
+    return new Teacher();
+  }
+  return new Director();
 }
 
 // Example usage
 console.log(createEmployee(200));    // Teacher
 console.log(createEmployee(1000));   // Director
 console.log(createEmployee("$500")); // Director
-
