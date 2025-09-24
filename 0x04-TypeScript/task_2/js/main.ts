@@ -1,4 +1,3 @@
-// Director interface
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
