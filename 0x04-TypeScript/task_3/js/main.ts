@@ -3,7 +3,7 @@
 import { RowID, RowElement } from './interface';
 import * as CRUD from './crud.js';
 
-// Create row object
+// Row object
 const row: RowElement = {
   firstName: 'Guillaume',
   lastName: 'Salva',
@@ -11,11 +11,12 @@ const row: RowElement = {
 
 // Insert row
 const newRowID: RowID = CRUD.insertRow(row);
-console.log(`Inserted row ID: ${newRowID}`);
+console.log(`Inserted row id ${newRowID}`);
 
-// Update row with age
+// Updated row (explicit, not spread)
 const updatedRow: RowElement = {
-  ...row,
+  firstName: 'Guillaume',
+  lastName: 'Salva',
   age: 23,
 };
 CRUD.updateRow(newRowID, updatedRow);
